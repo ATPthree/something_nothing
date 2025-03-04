@@ -1,0 +1,34 @@
+{
+  "entryPagePath": "pages/login/login",
+  "pages": [
+    "pages/home/home",
+    "pages/login/login",
+    "pages/order/order",
+    "pages/orders/orders",
+    "pages/user/user",
+    "pages/user_main/user_main",
+    "pages/logs/logs",
+    "pages/canteen-aunt/canteen-aunt",
+    "pages/manager/manager"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "东华有饭"
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/user_main/user_main",
+      "text": "点餐"
+    },{
+      "pagePath": "pages/logs/logs",
+      "text": "记录"
+    }],
+    "position": "bottom"
+  }
+}

@@ -1,0 +1,87 @@
+/* 容器样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+/* 页面头部样式 */
+.header {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* 标签切换样式 */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  font-size: 18px;
+  color: #333;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: red;
+}
+
+/* 内容区域样式 */
+.content {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* 订单列表样式 */
+.order-list {
+  width: 100%;
+}
+
+.order {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-detail text {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 订单操作按钮样式 */
+.order button {
+  width: 100%;
+  max-width: 200px;
+  height: 40px;
+  background-color: #1aad19;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* 个人中心样式 */
+.personal-center {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

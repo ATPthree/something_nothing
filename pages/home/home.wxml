@@ -1,0 +1,63 @@
+<view class="container">
+  <!-- 导航栏 -->
+  <view class="navbar">
+    <text class="logo">美味餐厅</text>
+    <view class="nav-links">
+      <navigator url="/pages/orders/orders" hover-class="none" bindtap="navigateToOrders">
+        <text>订单</text>
+      </navigator>
+      <navigator url="/pages/order/order" hover-class="none" bindtap="navigateToOrder">
+        <text>点餐</text>
+      </navigator>
+      <navigator url="/pages/user/user" hover-class="none" bindtap="navigateToProfile">
+        <text>个人中心</text>
+      </navigator>
+    </view>
+  </view>
+
+  <!-- 轮播图 -->
+  <swiper class="banner-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{1000}}">
+    <swiper-item>
+      <image src="https://www.helloimg.com/i/2024/10/14/670d19df5bb1d.jpg" mode="aspectFill" class="banner-image"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://www.helloimg.com/i/2024/10/14/670d19df83abf.jpg" mode="aspectFill" class="banner-image"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://www.helloimg.com/i/2024/10/14/670d19df78017.jpg" mode="aspectFill" class="banner-image"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 特色推荐 -->
+  <view class="featured-section">
+    <text class="section-title">特色推荐</text>
+    <scroll-view class="featured-list" scroll-x>
+      <block wx:for="{{featuredDishes}}" wx:key="id">
+        <view class="dish-card">
+          <image src="{{item.image}}" mode="aspectFill" class="dish-image"></image>
+          <text class="dish-name">{{item.name}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <!-- 优惠信息 -->
+  <view class="promotions-section">
+    <text class="section-title">今日优惠</text>
+    <view class="promotion-cards">
+      <block wx:for="{{promotions}}" wx:key="id">
+        <view class="promotion-card">
+          <text class="promotion-title">{{item.title}}</text>
+          <text class="promotion-description">{{item.description}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 联系方式 -->
+  <view class="contact-info">
+    <text class="info-title">联系方式\n</text>
+    <text class="info-content">电话: 000-1234-5678\n</text>
+    <text class="info-content">地址: 上海市松江区人民北路2999号东华大学</text>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<!-- 个人中心页面 -->
+<view class="user-container">
+  <view class="header">
+    <text class="title">个人中心</text>
+  </view>
+  <view class="content">
+    <button class="logout-button" bindtap="logout">退出登录</button>
+  </view>
+</view>

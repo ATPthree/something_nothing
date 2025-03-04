@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="order-list">
+    <block wx:for="{{orders}}" wx:key="timestamp">
+      <view class="order-item">
+        <text class="order-timestamp">{{formatTimestamp(item.timestamp)}}</text>
+        <view class="order-details">
+          <block wx:for="{{item.items}}" wx:key="id">
+            <view class="order-detail">
+              <text class="order-name">{{item.name}}</text>
+              <text class="order-quantity">x {{item.quantity}}</text>
+              <text class="order-price">￥{{item.price * item.quantity}}</text>
+            </view>
+          </block>
+          <text class="order-total">总价: ￥{{item.total}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

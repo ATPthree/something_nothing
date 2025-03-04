@@ -1,0 +1,151 @@
+/* 容器样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+/* 页面头部样式 */
+.header {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* 标签切换样式 */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  font-size: 18px;
+  color: #333;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* 活动标签样式 */
+.tab.active {
+  color: red;
+}
+
+/* 内容区域样式 */
+.content {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* 菜品列表样式 */
+.dishes-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.dish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px; /* 调整宽度以适应没有图片的布局 */
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.dish-name {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.dish-price {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 添加菜品表单样式 */
+.add-dish-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-dish-form input {
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-dish-form button {
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  background-color: #1aad19;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-dish-form button:hover {
+  background-color: #179b16;
+}
+
+/* 订单列表样式 */
+.order-list {
+  width: 100%;
+}
+
+.order {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-detail text {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 订单操作按钮样式 */
+.order button {
+  width: 100%;
+  max-width: 200px;
+  height: 40px;
+  background-color: #1aad19;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order button:hover {
+  background-color: #179b16;
+}

@@ -1,0 +1,72 @@
+<view class="container">
+  <!-- 标签栏 -->
+  <view class="tab-bar">
+    <view 
+      class="tab-item {{currentTab === 'floor1' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="floor1"
+    >
+      一楼
+    </view>
+    <view 
+      class="tab-item {{currentTab === 'floor2' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="floor2"
+    >
+      二楼
+    </view>
+  </view>
+
+  <!-- 菜品列表 -->
+  <scroll-view class="menu-list" scroll-y>
+    <block wx:if="{{currentTab === 'floor1'}}">
+      <block wx:for="{{floor1Dishes}}" wx:key="id">
+        <view class="dish-item" bindtap="addToCart" data-dish="{{item}}">
+          <image src="{{item.image}}" mode="aspectFit" class="dish-image"></image>
+          <view class="dish-info">
+            <text class="dish-name">{{item.name}}</text>
+            <text class="dish-price">￥{{item.price}}</text>
+          </view>
+        </view>
+      </block>
+    </block>
+
+    <block wx:elif="{{currentTab === 'floor2'}}">
+      <block wx:for="{{floor2Dishes}}" wx:key="id">
+        <view class="dish-item" bindtap="addToCart" data-dish="{{item}}">
+          <image src="{{item.image}}" mode="aspectFit" class="dish-image"></image>
+          <view class="dish-info">
+            <text class="dish-name">{{item.name}}</text>
+            <text class="dish-price">￥{{item.price}}</text>
+          </view>
+        </view>
+      </block>
+    </block>
+  </scroll-view>
+
+  <!-- 购物车按钮 -->
+  <button class="cart-button" bindtap="toggleCart">购物车 ({{cart.length}})</button>
+
+  <!-- 购物车弹窗 -->
+  <view class="cart-popup" wx:if="{{isCartVisible}}">
+    <view class="cart-header">
+      <text>购物车</text>
+      <button class="close-button" bindtap="toggleCart">关闭</button>
+    </view>
+    <scroll-view class="cart-items" scroll-y>
+      <block wx:for="{{cart}}" wx:key="id">
+        <view class="cart-item">
+          <text>{{item.name}} x {{item.quantity}}</text>
+          <view class="quantity-controls">
+            <button class="quantity-button" bindtap="decreaseQuantity" data-index="{{index}}">-</button>
+            <text class="quantity-text">{{item.quantity}}</text>
+            <button class="quantity-button" bindtap="increaseQuantity" data-index="{{index}}">+</button>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="cart-footer">
+      <button class="submit-button" bindtap="submitOrder">提交订单</button>
+    </view>
+  </view>
+</view>

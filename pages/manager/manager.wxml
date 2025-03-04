@@ -1,0 +1,49 @@
+<view class="container">
+  <!-- 页面头部 -->
+  <view class="header">
+    <text>管理者页面</text>
+  </view>
+
+  <!-- 标签切换 -->
+  <view class="tabs">
+    <view class="tab" data-tab="manage-dishes" bindtap="switchTab" style="{{tab === 'manage-dishes' ? 'color: red;' : ''}}">管理菜品</view>
+    <view class="tab" data-tab="view-orders" bindtap="switchTab" style="{{tab === 'view-orders' ? 'color: red;' : ''}}">查看订单</view>
+  </view>
+
+  <!-- 管理菜品 -->
+  <view class="content" wx:if="{{tab === 'manage-dishes'}}">
+    <view class="dishes-list">
+      <block wx:for="{{dishes}}" wx:key="id">
+        <view class="dish">
+          <text class="dish-name">{{item.name}}</text>
+          <text class="dish-price">￥{{item.price}}</text>
+          <button bindtap="deleteDish" data-id="{{item.id}}">删除</button>
+        </view>
+      </block>
+    </view>
+
+    <view class="add-dish-form">
+      <input placeholder="菜品名称" value="{{newDish.name}}" bindinput="updateNewDish" data-name="name" />
+      <input placeholder="价格" value="{{newDish.price}}" bindinput="updateNewDish" data-name="price" />
+      <button bindtap="addDish">添加菜品</button>
+    </view>
+  </view>
+
+  <!-- 查看订单 -->
+  <view class="content" wx:if="{{tab === 'view-orders'}}">
+    <view class="order-list">
+      <block wx:for="{{orders}}" wx:key="id">
+        <view class="order">
+          <view class="order-detail">
+            <text>订单编号: {{item.id}}</text>
+            <text>订单内容: {{getOrderDetails(item.items)}}</text>
+            <text>订单总价: ￥{{item.total}}</text>
+            <text>下单时间: {{formatDate(item.timestamp)}}</text>
+            <text>订单状态: {{item.status}}</text>
+            <text>用户: {{item.user}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

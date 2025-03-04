@@ -1,0 +1,39 @@
+<view class="container">
+  <!-- 页面头部 -->
+  <view class="header">
+    <text>食堂阿姨页面</text>
+  </view>
+
+  <!-- 标签切换 -->
+  <view class="tabs">
+    <view class="tab" data-tab="view-orders" bindtap="switchTab" style="{{tab === 'view-orders' ? 'color: red;' : ''}}">查看订单</view>
+    <view class="tab" data-tab="personal-center" bindtap="switchTab" style="{{tab === 'personal-center' ? 'color: red;' : ''}}">个人中心</view>
+  </view>
+
+  <!-- 查看订单 -->
+  <view class="content" wx:if="{{tab === 'view-orders'}}">
+    <view class="order-list">
+      <block wx:for="{{orders}}" wx:key="id">
+        <view class="order">
+          <view class="order-detail">
+            <text>订单编号: {{item.id}}</text>
+            <text>订单内容: {{item.items2}}</text>
+            <!--<text>订单总价: ￥{{item.total}}</text>-->
+            <text>下单时间: {{item.order_time}}</text>
+            <text>订单状态: {{item.status}}</text>
+            <text>用户: {{item.user}}</text>
+            <button bindtap="updateOrderStatus" data-order-id="{{item.id}}" data-new-status="制作中" wx:if="{{item.status !== '制作中'}}">标记为制作中</button>
+            <button bindtap="updateOrderStatus" data-order-id="{{item.id}}" data-new-status="已完成" wx:if="{{item.status !== '已完成'}}">标记为已完成</button>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 个人中心 -->
+  <view class="content" wx:if="{{tab === 'personal-center'}}">
+    <view class="personal-center">
+      <text>个人中心内容</text>
+    </view>
+  </view>
+</view>

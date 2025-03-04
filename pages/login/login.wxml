@@ -1,0 +1,25 @@
+<view class="container">
+  <!-- 登录页面的顶部图片 -->
+  <image class="login-image" src="https://www.helloimg.com/i/2024/10/14/670d0a3ad4830.jpg" mode="aspectFit"></image>
+
+  <!-- 学号输入框 -->
+  <view class="form-item">
+    <text>学号</text>
+    <input type="text" placeholder="请输入学号" bindinput="bindStudentIdInput" />
+  </view>
+ <!-- 姓名输入框 -->
+ <view class="form-item">
+    <text>姓名</text>
+    <input type="text" placeholder="请输入姓名" bindinput="bindNameInput" />
+  </view>
+  <!-- 密码输入框 -->
+  <view class="form-item">
+    <text>密码</text>
+    <input type="password" placeholder="请输入密码" bindinput="bindPasswordInput" />
+  </view>
+
+  <!-- 登录按钮 -->
+  <button class="login_bin" bindtap="login">登录</button>
+  <!-- 注册按钮 -->
+   <button class="register_bin" bindtap="register">注册</button>
+</view>

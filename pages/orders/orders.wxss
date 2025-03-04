@@ -1,0 +1,57 @@
+/* 基础样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.order-list {
+  width: 100%;
+}
+
+.order-item {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-timestamp {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.order-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.order-quantity {
+  font-size: 14px;
+}
+
+.order-price {
+  font-size: 14px;
+  color: #ff4d4f;
+}
+
+.order-total {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
